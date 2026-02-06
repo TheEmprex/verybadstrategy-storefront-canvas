@@ -1,31 +1,31 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Lightbulb, Zap, Target, Shuffle } from "lucide-react";
+import { Lightbulb, Zap, Target, TrendingUp } from "lucide-react";
 
 const services = [
   {
     icon: Lightbulb,
-    title: "Bad Ideas, Executed Well",
+    title: "Strategic Advisory",
     description:
-      "We take the ideas everyone else rejects and turn them into something nobody expected.",
+      "We provide consulting and strategic guidance to businesses looking to navigate complex markets and unlock new growth.",
   },
   {
-    icon: Zap,
-    title: "Rapid Experimentation",
+    icon: TrendingUp,
+    title: "Venture Development",
     description:
-      "Move fast. Break things. Put them back together in a more interesting shape.",
+      "From concept to execution, we identify, incubate, and scale ventures with high-impact potential.",
   },
   {
     icon: Target,
-    title: "Strategic Chaos",
+    title: "Market Analysis",
     description:
-      "Sometimes the best path forward is the one nobody thought to take.",
+      "Deep-dive research and competitive intelligence to inform decision-making and uncover overlooked opportunities.",
   },
   {
-    icon: Shuffle,
-    title: "Whatever Comes Next",
+    icon: Zap,
+    title: "Operational Strategy",
     description:
-      "We're building the plane while flying it. Buckle up.",
+      "Streamlining operations and building scalable frameworks that drive efficiency and long-term value.",
   },
 ];
 
@@ -46,7 +46,7 @@ const ServicesSection = () => {
             What We Do
           </span>
           <h2 className="font-display text-4xl md:text-6xl font-bold tracking-tight">
-            Our "Services"
+            Our Services
           </h2>
         </motion.div>
 

@@ -17,12 +17,12 @@ const AboutSection = () => {
             className="mb-16"
           >
             <span className="text-xs font-body font-medium tracking-[0.3em] uppercase text-primary mb-4 block">
-              Who We Are
+              About Us
             </span>
             <h2 className="font-display text-4xl md:text-6xl font-bold tracking-tight leading-tight">
-              The name is the
+              Bold moves require
               <br />
-              <span className="text-muted-foreground">strategy.</span>
+              <span className="text-muted-foreground">bold thinking.</span>
             </h2>
           </motion.div>
 
@@ -33,9 +33,9 @@ const AboutSection = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <p className="font-body text-secondary-foreground leading-relaxed text-lg">
-                Very Bad Strategy LLC is a company built on the premise that 
-                the best ideas often sound terrible at first. We're still 
-                figuring out exactly what we do — and that's entirely the point.
+                Very Bad Strategy LLC is a holding company and strategic 
+                advisory firm focused on identifying high-potential opportunities 
+                across emerging markets and underserved industries.
               </p>
             </motion.div>
 
@@ -45,15 +45,15 @@ const AboutSection = () => {
               transition={{ duration: 0.8, delay: 0.4 }}
             >
               <p className="font-body text-muted-foreground leading-relaxed">
-                In a world obsessed with optimization and "best practices," 
-                we think there's something beautiful about embracing the 
-                unconventional. Stay tuned — whatever we end up doing, 
-                it'll be interesting.
+                Our name reflects our philosophy: the best strategies often look 
+                unconventional from the outside. We pride ourselves on contrarian 
+                thinking, disciplined execution, and delivering measurable outcomes 
+                for every venture we undertake.
               </p>
             </motion.div>
           </div>
 
-          {/* Stats / Values */}
+          {/* Core Values */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -61,13 +61,13 @@ const AboutSection = () => {
             className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20 pt-16 border-t border-border"
           >
             {[
-              { value: "∞", label: "Bad Ideas" },
-              { value: "0", label: "Regrets" },
-              { value: "1", label: "Mission" },
-              { value: "?", label: "Products" },
+              { value: "Strategic", label: "Thinking" },
+              { value: "Disciplined", label: "Execution" },
+              { value: "Contrarian", label: "Approach" },
+              { value: "Measurable", label: "Results" },
             ].map((stat) => (
               <div key={stat.label} className="text-center">
-                <div className="font-display text-3xl md:text-4xl font-bold text-primary mb-2">
+                <div className="font-display text-xl md:text-2xl font-bold text-primary mb-2">
                   {stat.value}
                 </div>
                 <div className="font-body text-sm text-muted-foreground tracking-wide">
