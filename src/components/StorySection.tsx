@@ -1,52 +1,36 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Briefcase, GraduationCap, TrendingUp, Users } from "lucide-react";
 
-const timeline = [
+const milestones = [
   {
-    year: "Education",
-    title: "Masters in Finance",
+    phase: "Foundation",
+    title: "Quantitative Roots & Masters in Finance",
     description:
-      "Both founders hold advanced degrees in finance from top European institutions, building a rigorous foundation in quantitative analysis, portfolio theory, and capital markets.",
+      "Maxime and Lucas both hold Masters in Finance from top European institutions. Their shared quantitative background laid the groundwork for a rigorous, data-driven approach to everything that followed.",
   },
   {
-    year: "Private Equity",
-    title: "Institutional Track Record",
+    phase: "PE Secondaries",
+    title: "Part of the Largest Fund Raise in History",
     description:
-      "Years spent at leading private equity firms across fundraising, secondaries, and debt strategies — executing some of the largest transactions in the European market.",
+      "Together, they joined one of Europe's leading private equity secondaries teams — and were part of the group that raised the largest fund ever in the space, totaling over €30 billion. An experience that shaped their understanding of institutional capital at scale.",
   },
   {
-    year: "Expertise",
-    title: "Data-Driven Strategy",
+    phase: "Private Debt",
+    title: "Expanding into Credit Markets",
     description:
-      "Deep specialization in marketing intelligence, data analytics, and investor relations — combining quantitative rigor with creative go-to-market execution.",
+      "Building on their secondaries experience, they developed deep expertise in private debt — structuring and executing transactions across the credit spectrum, from senior secured to mezzanine strategies.",
   },
   {
-    year: "Today",
+    phase: "Digital & Data",
+    title: "A Growing Passion Turned Expertise",
+    description:
+      "Along the way, a shared interest in data analytics and digital marketing kept growing. What started as curiosity became real responsibility — leading data advisory initiatives and building digital marketing capabilities within institutional environments.",
+  },
+  {
+    phase: "Today",
     title: "Very Bad Strategy",
     description:
-      "Combining institutional-grade financial expertise with an entrepreneurial edge. VBS was founded to apply private equity discipline to new ventures and advisory engagements.",
-  },
-];
-
-const founders = [
-  {
-    name: "Maxime",
-    role: "Co-Founder",
-    background: [
-      "Private Equity & Secondaries",
-      "Institutional Fundraising",
-      "Masters in Finance",
-    ],
-  },
-  {
-    name: "Lucas",
-    role: "Co-Founder",
-    background: [
-      "Private Equity & Debt",
-      "Marketing & Data Strategy",
-      "Masters in Finance",
-    ],
+      "VBS is the convergence of it all: institutional-grade financial expertise, a deep understanding of data, and a hands-on approach to digital strategy. Maxime and Lucas founded VBS to bring private equity discipline to new ventures and advisory mandates.",
   },
 ];
 
@@ -75,80 +59,60 @@ const StorySection = () => {
             <span className="text-muted-foreground"> experience.</span>
           </h2>
           <p className="font-body text-muted-foreground text-base sm:text-lg max-w-2xl mx-auto leading-relaxed px-2">
-            Two finance professionals who spent years in private equity's most demanding 
-            arenas — now channeling that expertise into something of their own.
+            Maxime &amp; Lucas — two quants-trained finance professionals who went from raising 
+            the largest PE secondaries fund in history to building expertise across private debt, 
+            data analytics, and digital strategy.
           </p>
         </motion.div>
 
-        {/* Founders */}
-        <div className="grid sm:grid-cols-2 gap-4 sm:gap-6 max-w-3xl mx-auto mb-20 sm:mb-28">
-          {founders.map((founder, index) => (
-            <motion.div
-              key={founder.name}
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.2 + index * 0.15 }}
-              className="group relative p-6 sm:p-8 rounded-lg border border-border bg-card/80 backdrop-blur-sm hover:border-primary/30 transition-all duration-500"
-            >
-              <div className="flex items-center gap-4 mb-5">
-                <div className="w-12 h-12 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center">
-                  <span className="font-display text-lg font-bold text-primary">
-                    {founder.name[0]}
-                  </span>
-                </div>
-                <div>
-                  <h3 className="font-display text-lg sm:text-xl font-semibold text-card-foreground">
-                    {founder.name}
-                  </h3>
-                  <p className="font-body text-xs sm:text-sm text-primary">
-                    {founder.role}
-                  </p>
-                </div>
+        {/* Founders badge */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="flex justify-center mb-16 sm:mb-20"
+        >
+          <div className="inline-flex items-center gap-3 sm:gap-5 px-6 sm:px-8 py-4 sm:py-5 rounded-lg border border-border bg-card/80 backdrop-blur-sm">
+            <div className="flex -space-x-3">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-primary/10 border-2 border-background flex items-center justify-center z-10">
+                <span className="font-display text-sm sm:text-base font-bold text-primary">M</span>
               </div>
-
-              <div className="space-y-2.5">
-                {founder.background.map((item) => (
-                  <div key={item} className="flex items-center gap-2.5">
-                    <div className="w-1 h-1 rounded-full bg-primary flex-shrink-0" />
-                    <span className="font-body text-xs sm:text-sm text-muted-foreground">
-                      {item}
-                    </span>
-                  </div>
-                ))}
+              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-primary/10 border-2 border-background flex items-center justify-center">
+                <span className="font-display text-sm sm:text-base font-bold text-primary">L</span>
               </div>
-            </motion.div>
-          ))}
-        </div>
+            </div>
+            <div className="h-8 w-px bg-border" />
+            <div>
+              <p className="font-display text-sm sm:text-base font-semibold text-card-foreground">
+                Maxime &amp; Lucas
+              </p>
+              <p className="font-body text-[10px] sm:text-xs text-muted-foreground">
+                Co-Founders · MSc Finance · Quants Background
+              </p>
+            </div>
+          </div>
+        </motion.div>
 
         {/* Timeline */}
         <div className="max-w-3xl mx-auto">
-          <motion.h3
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="font-display text-xl sm:text-2xl font-semibold text-center mb-12 sm:mb-16"
-          >
-            The Journey
-          </motion.h3>
-
           <div className="relative">
             {/* Vertical line */}
             <div className="absolute left-4 sm:left-6 top-0 bottom-0 w-px bg-gradient-to-b from-primary/40 via-border to-transparent" />
 
-            <div className="space-y-10 sm:space-y-12">
-              {timeline.map((item, index) => (
+            <div className="space-y-10 sm:space-y-14">
+              {milestones.map((item, index) => (
                 <motion.div
-                  key={item.year}
+                  key={item.phase}
                   initial={{ opacity: 0, x: -20 }}
                   animate={isInView ? { opacity: 1, x: 0 } : {}}
-                  transition={{ duration: 0.6, delay: 0.5 + index * 0.15 }}
+                  transition={{ duration: 0.6, delay: 0.3 + index * 0.15 }}
                   className="relative pl-12 sm:pl-16"
                 >
                   {/* Dot */}
                   <div className="absolute left-2.5 sm:left-4 top-1 w-3 h-3 rounded-full border-2 border-primary bg-background" />
 
                   <span className="text-[10px] sm:text-xs font-body font-medium tracking-[0.2em] uppercase text-primary mb-1.5 block">
-                    {item.year}
+                    {item.phase}
                   </span>
                   <h4 className="font-display text-base sm:text-lg font-semibold text-foreground mb-2">
                     {item.title}
@@ -162,27 +126,26 @@ const StorySection = () => {
           </div>
         </div>
 
-        {/* Bottom stats */}
+        {/* Bottom highlights */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.8 }}
+          transition={{ duration: 0.8, delay: 0.9 }}
           className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mt-20 sm:mt-28 max-w-4xl mx-auto"
         >
           {[
-            { icon: Briefcase, value: "PE", label: "Background" },
-            { icon: GraduationCap, value: "MSc", label: "Finance" },
-            { icon: TrendingUp, value: "Debt & Equity", label: "Expertise" },
-            { icon: Users, value: "2", label: "Founders" },
+            { value: "€30Bn+", label: "Largest PE Secondaries Fund" },
+            { value: "MSc", label: "Finance · Quants" },
+            { value: "Debt & Equity", label: "Full-Spectrum Experience" },
+            { value: "Data & Digital", label: "Marketing Expertise" },
           ].map((stat, index) => (
             <motion.div
               key={stat.label}
               initial={{ opacity: 0, scale: 0.9 }}
               animate={isInView ? { opacity: 1, scale: 1 } : {}}
-              transition={{ duration: 0.5, delay: 0.9 + index * 0.1 }}
+              transition={{ duration: 0.5, delay: 1 + index * 0.1 }}
               className="text-center p-4 sm:p-6 rounded-lg border border-border/50 bg-card/50"
             >
-              <stat.icon size={20} className="text-primary mx-auto mb-2 sm:mb-3" />
               <div className="font-display text-base sm:text-lg font-bold text-foreground mb-0.5">
                 {stat.value}
               </div>
