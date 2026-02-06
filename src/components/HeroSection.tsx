@@ -24,7 +24,7 @@ const HeroSection = () => {
           className="mb-6"
         >
           <span className="inline-block text-xs font-body font-medium tracking-[0.3em] uppercase text-primary border border-primary/30 px-4 py-1.5 rounded-full">
-            Established 2025
+            Strategic Advisory & Ventures
           </span>
         </motion.div>
 
@@ -45,8 +45,8 @@ const HeroSection = () => {
           transition={{ duration: 0.8, delay: 0.7 }}
           className="font-body text-lg md:text-xl text-muted-foreground max-w-xl mx-auto mb-12 leading-relaxed"
         >
-          We do things differently. Sometimes that means doing them badly — 
-          on purpose. Sometimes it means rewriting the rules entirely.
+          Unconventional thinking. Proven results. We challenge assumptions 
+          and build strategies that others overlook.
         </motion.p>
 
         <motion.div
@@ -65,7 +65,7 @@ const HeroSection = () => {
             href="#contact"
             className="font-body font-medium border border-border text-foreground px-8 py-3.5 rounded-sm hover:bg-accent transition-all duration-300"
           >
-            Say Hello
+            Contact Us
           </a>
         </motion.div>
       </div>

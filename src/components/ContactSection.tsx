@@ -19,12 +19,12 @@ const ContactSection = () => {
               Get In Touch
             </span>
             <h2 className="font-display text-4xl md:text-6xl font-bold tracking-tight mb-6">
-              Let's talk
+              Let's connect
               <span className="text-primary">.</span>
             </h2>
             <p className="font-body text-muted-foreground text-lg mb-12 max-w-lg mx-auto leading-relaxed">
-              Got a bad idea? We want to hear it. Got a good one? We'll 
-              make it worse — in the best possible way.
+              Interested in working together or learning more about what 
+              we do? We'd love to hear from you.
             </p>
           </motion.div>
 
@@ -35,11 +35,11 @@ const ContactSection = () => {
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
             <a
-              href="mailto:hello@verybadstrategy.com"
+              href="mailto:contact@verybadstrategy.com"
               className="group inline-flex items-center gap-3 font-body font-medium bg-primary text-primary-foreground px-8 py-4 rounded-sm hover:bg-primary/90 transition-all duration-300 glow-primary"
             >
               <Mail size={18} />
-              hello@verybadstrategy.com
+              contact@verybadstrategy.com
               <ArrowUpRight
                 size={16}
                 className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300"
