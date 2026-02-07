@@ -16,12 +16,12 @@ const AboutSection = () => {
             className="mb-12 sm:mb-16"
           >
             <span className="text-[10px] sm:text-xs font-body font-medium tracking-[0.3em] uppercase text-primary mb-3 sm:mb-4 block">
-              About Us
+              About
             </span>
             <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight">
-              Bold moves require
+              The name is a joke<span className="text-primary">.</span>
               <br />
-              <span className="text-muted-foreground">bold thinking.</span>
+              <span className="text-muted-foreground">The work isn't.</span>
             </h2>
           </motion.div>
 
@@ -32,9 +32,9 @@ const AboutSection = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <p className="font-body text-secondary-foreground leading-relaxed text-base sm:text-lg">
-                Very Bad Strategy LLC is a holding company and strategic 
-                advisory firm focused on identifying high-potential opportunities 
-                across emerging markets and underserved industries.
+                VBS is a holding company and advisory firm built by two ex-PE 
+                professionals who got tired of the gap between institutional finance 
+                and the real world of building businesses.
               </p>
             </motion.div>
 
@@ -44,15 +44,16 @@ const AboutSection = () => {
               transition={{ duration: 0.8, delay: 0.4 }}
             >
               <p className="font-body text-muted-foreground leading-relaxed text-sm sm:text-base">
-                Our name reflects our philosophy: the best strategies often look 
-                unconventional from the outside. We pride ourselves on contrarian 
-                thinking, disciplined execution, and delivering measurable outcomes 
-                for every venture we undertake.
+                We bring private equity rigor to ventures and advisory mandates. 
+                That means actual due diligence, real financial modeling, and growth 
+                strategies backed by data — not slide decks full of buzzwords. 
+                We've raised capital at scale, built companies from zero, and we 
+                know what works because we've done it ourselves.
               </p>
             </motion.div>
           </div>
 
-          {/* Core Values */}
+          {/* What we bring — no buzzwords */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -60,10 +61,10 @@ const AboutSection = () => {
             className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 mt-14 sm:mt-20 pt-12 sm:pt-16 border-t border-border"
           >
             {[
-              { value: "Strategic", label: "Thinking" },
-              { value: "Disciplined", label: "Execution" },
-              { value: "Contrarian", label: "Approach" },
-              { value: "Measurable", label: "Results" },
+              { value: "PE", label: "Background" },
+              { value: "Founder", label: "Experience" },
+              { value: "Data", label: "Driven" },
+              { value: "Hands-on", label: "Always" },
             ].map((stat, index) => (
               <motion.div
                 key={stat.label}
