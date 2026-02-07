@@ -4,6 +4,7 @@ import MarqueeStrip from "@/components/MarqueeStrip";
 import AboutSection from "@/components/AboutSection";
 import StorySection from "@/components/StorySection";
 import ServicesSection from "@/components/ServicesSection";
+import VenturesSection from "@/components/VenturesSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 
@@ -16,6 +17,7 @@ const Index = () => {
       <AboutSection />
       <StorySection />
       <ServicesSection />
+      <VenturesSection />
       <ContactSection />
       <Footer />
     </div>
