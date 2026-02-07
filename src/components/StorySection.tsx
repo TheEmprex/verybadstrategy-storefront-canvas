@@ -1,39 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
-const milestones = [
-  {
-    phase: "Foundation",
-    title: "Quantitative Roots & Masters in Finance",
-    description:
-      "Maxime and Lucas both hold Masters in Finance from top European institutions. Their shared quantitative background laid the groundwork for a rigorous, data-driven approach to everything that followed.",
-  },
-  {
-    phase: "PE Secondaries",
-    title: "Part of the Largest Fund Raise in History",
-    description:
-      "Together, they joined one of Europe's leading private equity secondaries teams — and were part of the group that raised the largest fund ever in the space, totaling over €30 billion. An experience that shaped their understanding of institutional capital at scale.",
-  },
-  {
-    phase: "Private Debt",
-    title: "Expanding into Credit Markets",
-    description:
-      "Building on their secondaries experience, they developed deep expertise in private debt — structuring and executing transactions across the credit spectrum, from senior secured to mezzanine strategies.",
-  },
-  {
-    phase: "Digital & Data",
-    title: "A Growing Passion Turned Expertise",
-    description:
-      "Along the way, a shared interest in data analytics and digital marketing kept growing. What started as curiosity became real responsibility — leading data advisory initiatives and building digital marketing capabilities within institutional environments.",
-  },
-  {
-    phase: "Today",
-    title: "Very Bad Strategy",
-    description:
-      "VBS is the convergence of it all: institutional-grade financial expertise, a deep understanding of data, and a hands-on approach to digital strategy. Maxime and Lucas founded VBS to bring private equity discipline to new ventures and advisory mandates.",
-  },
-];
-
 const StorySection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
@@ -55,14 +22,9 @@ const StorySection = () => {
             Our Story
           </span>
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4 sm:mb-6">
-            Built on
-            <span className="text-muted-foreground"> experience.</span>
+            Two paths,
+            <span className="text-muted-foreground"> one vision.</span>
           </h2>
-          <p className="font-body text-muted-foreground text-base sm:text-lg max-w-2xl mx-auto leading-relaxed px-2">
-            Maxime &amp; Lucas — two quants-trained finance professionals who went from raising 
-            the largest PE secondaries fund in history to building expertise across private debt, 
-            data analytics, and digital strategy.
-          </p>
         </motion.div>
 
         {/* Founders badge */}
@@ -87,74 +49,51 @@ const StorySection = () => {
                 Maxime &amp; Lucas
               </p>
               <p className="font-body text-[10px] sm:text-xs text-muted-foreground">
-                Co-Founders · MSc Finance · Quants Background
+                Co-Founders · VBS
               </p>
             </div>
           </div>
         </motion.div>
 
-        {/* Timeline */}
-        <div className="max-w-3xl mx-auto">
-          <div className="relative">
-            {/* Vertical line */}
-            <div className="absolute left-4 sm:left-6 top-0 bottom-0 w-px bg-gradient-to-b from-primary/40 via-border to-transparent" />
-
-            <div className="space-y-10 sm:space-y-14">
-              {milestones.map((item, index) => (
-                <motion.div
-                  key={item.phase}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={isInView ? { opacity: 1, x: 0 } : {}}
-                  transition={{ duration: 0.6, delay: 0.3 + index * 0.15 }}
-                  className="relative pl-12 sm:pl-16"
-                >
-                  {/* Dot */}
-                  <div className="absolute left-2.5 sm:left-4 top-1 w-3 h-3 rounded-full border-2 border-primary bg-background" />
-
-                  <span className="text-[10px] sm:text-xs font-body font-medium tracking-[0.2em] uppercase text-primary mb-1.5 block">
-                    {item.phase}
-                  </span>
-                  <h4 className="font-display text-base sm:text-lg font-semibold text-foreground mb-2">
-                    {item.title}
-                  </h4>
-                  <p className="font-body text-xs sm:text-sm text-muted-foreground leading-relaxed">
-                    {item.description}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* Bottom highlights */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.9 }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mt-20 sm:mt-28 max-w-4xl mx-auto"
-        >
+        {/* Narrative blocks */}
+        <div className="max-w-2xl mx-auto space-y-12 sm:space-y-16">
           {[
-            { value: "€30Bn+", label: "Largest PE Secondaries Fund" },
-            { value: "MSc", label: "Finance · Quants" },
-            { value: "Debt & Equity", label: "Full-Spectrum Experience" },
-            { value: "Data & Digital", label: "Marketing Expertise" },
-          ].map((stat, index) => (
+            {
+              title: "Where it started",
+              text: "Maxime and Lucas met in the world of private equity. Both quants-trained with Masters in Finance, they worked side by side on one of Europe's leading secondaries teams — part of the group that closed the largest PE secondaries fundraise in history. They built deep expertise across private debt, equity, and institutional capital markets.",
+            },
+            {
+              title: "The spark",
+              text: "Along the way, a shared obsession for data analytics and digital marketing kept growing. What started as curiosity turned into real responsibility — leading data advisory initiatives and building digital strategies within institutional environments. The corporate world gave them the skills, but not the freedom.",
+            },
+            {
+              title: "Maxime's leap",
+              text: "Maxime left finance first. He launched his own ventures — including ProsperHub Media — and built them into multi-million dollar businesses. No safety net, no corporate playbook. Just execution, conviction, and the skills sharpened over years in PE.",
+            },
+            {
+              title: "Lucas follows",
+              text: "Inspired by what was being built outside the walls of institutional finance, Lucas made his move this year. The reunion was inevitable. Two people with the same background, the same ambition, and a shared belief that the best strategies come from those who've actually built something.",
+            },
+            {
+              title: "VBS is born",
+              text: "Very Bad Strategy is the convergence of everything — institutional-grade financial expertise, entrepreneurial grit, and a deep understanding of data and digital growth. Maxime and Lucas founded VBS to bring private equity discipline to advisory mandates and new ventures. Not theory. Results.",
+            },
+          ].map((block, index) => (
             <motion.div
-              key={stat.label}
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={isInView ? { opacity: 1, scale: 1 } : {}}
-              transition={{ duration: 0.5, delay: 1 + index * 0.1 }}
-              className="text-center p-4 sm:p-6 rounded-lg border border-border/50 bg-card/50"
+              key={block.title}
+              initial={{ opacity: 0, y: 30 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.7, delay: 0.3 + index * 0.12 }}
             >
-              <div className="font-display text-base sm:text-lg font-bold text-foreground mb-0.5">
-                {stat.value}
-              </div>
-              <div className="font-body text-[10px] sm:text-xs text-muted-foreground tracking-wide">
-                {stat.label}
-              </div>
+              <span className="text-[10px] sm:text-xs font-body font-medium tracking-[0.25em] uppercase text-primary mb-2 block">
+                {block.title}
+              </span>
+              <p className="font-body text-sm sm:text-base text-muted-foreground leading-relaxed">
+                {block.text}
+              </p>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );
