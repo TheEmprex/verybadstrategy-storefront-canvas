@@ -5,11 +5,11 @@ import heroBg from "@/assets/hero-bg.jpg";
 const HeroSection = () => {
   return (
     <section className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden noise-bg">
-      {/* Background image with parallax feel */}
+      {/* Background image */}
       <div className="absolute inset-0">
         <img
           src={heroBg}
-          alt="Abstract dark strategic imagery"
+          alt=""
           className="w-full h-full object-cover opacity-30 scale-105"
           loading="eager"
         />
@@ -17,7 +17,7 @@ const HeroSection = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-background/50 via-transparent to-background/50" />
       </div>
 
-      {/* Decorative grid lines */}
+      {/* Grid lines */}
       <div className="absolute inset-0 opacity-[0.03]" style={{
         backgroundImage: 'linear-gradient(hsl(var(--foreground)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--foreground)) 1px, transparent 1px)',
         backgroundSize: '80px 80px'
@@ -32,7 +32,7 @@ const HeroSection = () => {
           className="mb-4 sm:mb-6"
         >
           <span className="inline-block text-[10px] sm:text-xs font-body font-medium tracking-[0.3em] uppercase text-primary border border-primary/30 px-3 sm:px-4 py-1 sm:py-1.5 rounded-full">
-            Strategic Advisory & Ventures
+            Advisory · Ventures · Growth
           </span>
         </motion.div>
 
@@ -51,10 +51,10 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.7 }}
-          className="font-body text-base sm:text-lg md:text-xl text-muted-foreground max-w-md sm:max-w-xl mx-auto mb-8 sm:mb-12 leading-relaxed px-2"
+          className="font-body text-base sm:text-lg md:text-xl text-muted-foreground max-w-md sm:max-w-lg mx-auto mb-8 sm:mb-12 leading-relaxed px-2"
         >
-          Unconventional thinking. Proven results. We challenge assumptions 
-          and build strategies that others overlook.
+          PE-trained. Founder-tested. We build, advise, and invest 
+          at the intersection of finance, data, and digital growth.
         </motion.p>
 
         <motion.div
@@ -64,16 +64,16 @@ const HeroSection = () => {
           className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4 sm:px-0"
         >
           <a
-            href="#about"
+            href="#story"
             className="font-body font-medium bg-primary text-primary-foreground px-6 sm:px-8 py-3 sm:py-3.5 rounded-sm hover:bg-primary/90 transition-all duration-300 glow-primary text-sm sm:text-base"
           >
-            Learn More
+            Our Story
           </a>
           <a
             href="#contact"
             className="font-body font-medium border border-border text-foreground px-6 sm:px-8 py-3 sm:py-3.5 rounded-sm hover:bg-accent transition-all duration-300 text-sm sm:text-base"
           >
-            Contact Us
+            Get in Touch
           </a>
         </motion.div>
       </div>

@@ -1,6 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Mail, ArrowUpRight, MapPin } from "lucide-react";
+import { Mail, ArrowUpRight } from "lucide-react";
 
 const ContactSection = () => {
   const ref = useRef(null);
@@ -16,15 +16,14 @@ const ContactSection = () => {
             transition={{ duration: 0.8 }}
           >
             <span className="text-[10px] sm:text-xs font-body font-medium tracking-[0.3em] uppercase text-primary mb-3 sm:mb-4 block">
-              Get In Touch
+              Contact
             </span>
             <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4 sm:mb-6">
-              Let's connect
-              <span className="text-primary">.</span>
+              Let's talk<span className="text-primary">.</span>
             </h2>
             <p className="font-body text-muted-foreground text-base sm:text-lg mb-8 sm:mb-12 max-w-lg mx-auto leading-relaxed px-2">
-              Interested in working together or learning more about what 
-              we do? We'd love to hear from you.
+              Whether it's a venture, an advisory mandate, or just a conversation — 
+              we're always open.
             </p>
           </motion.div>
 
@@ -47,7 +46,6 @@ const ContactSection = () => {
             </a>
           </motion.div>
 
-          {/* Decorative line */}
           <motion.div
             initial={{ scaleX: 0 }}
             animate={isInView ? { scaleX: 1 } : {}}
