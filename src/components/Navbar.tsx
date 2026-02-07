@@ -1,23 +1,60 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
+import { CartDrawer } from "@/components/CartDrawer";
 
 const navLinks = [
-  { label: "About", href: "#about" },
-  { label: "Our Story", href: "#story" },
-  { label: "Services", href: "#services" },
-  { label: "Contact", href: "#contact" },
+  { label: "About", href: "#about", type: "hash" as const },
+  { label: "Our Story", href: "#story", type: "hash" as const },
+  { label: "Services", href: "#services", type: "hash" as const },
+  { label: "Store", href: "/store", type: "route" as const },
+  { label: "Contact", href: "#contact", type: "hash" as const },
 ];
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
+  const isHome = location.pathname === "/";
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const renderNavLink = (link: typeof navLinks[0], mobile = false) => {
+    const baseClasses = mobile
+      ? "text-base font-body text-muted-foreground hover:text-foreground transition-colors py-3 px-2 rounded-md hover:bg-accent"
+      : "relative text-sm font-body text-muted-foreground hover:text-foreground transition-colors duration-300 after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-px after:bg-primary after:transition-all after:duration-300 hover:after:w-full";
+
+    if (link.type === "route") {
+      return (
+        <Link
+          key={link.label}
+          to={link.href}
+          onClick={() => mobile && setIsOpen(false)}
+          className={baseClasses}
+        >
+          {link.label}
+        </Link>
+      );
+    }
+
+    // Hash links — if not on home page, link to /#hash
+    const href = isHome ? link.href : `/${link.href}`;
+    return (
+      <a
+        key={link.label}
+        href={href}
+        onClick={() => mobile && setIsOpen(false)}
+        className={baseClasses}
+      >
+        {link.label}
+      </a>
+    );
+  };
 
   return (
     <motion.nav
@@ -31,37 +68,33 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto flex items-center justify-between px-4 sm:px-6 py-3 sm:py-4">
-        <a href="#" className="font-display text-lg sm:text-xl font-bold tracking-tight text-foreground">
+        <Link to="/" className="font-display text-lg sm:text-xl font-bold tracking-tight text-foreground">
           VBS<span className="text-primary">.</span>
-        </a>
+        </Link>
 
         {/* Desktop */}
         <div className="hidden md:flex items-center gap-6 lg:gap-8">
-          {navLinks.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              className="relative text-sm font-body text-muted-foreground hover:text-foreground transition-colors duration-300 after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-px after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
-            >
-              {link.label}
-            </a>
-          ))}
+          {navLinks.map((link) => renderNavLink(link))}
+          <CartDrawer />
           <a
-            href="#contact"
+            href={isHome ? "#contact" : "/#contact"}
             className="text-sm font-body font-medium bg-primary text-primary-foreground px-5 py-2 rounded-sm hover:bg-primary/90 transition-all duration-300 hover:glow-primary"
           >
             Get in Touch
           </a>
         </div>
 
-        {/* Mobile toggle */}
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden text-foreground p-1"
-          aria-label="Toggle menu"
-        >
-          {isOpen ? <X size={22} /> : <Menu size={22} />}
-        </button>
+        {/* Mobile right side */}
+        <div className="flex items-center gap-2 md:hidden">
+          <CartDrawer />
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="text-foreground p-1"
+            aria-label="Toggle menu"
+          >
+            {isOpen ? <X size={22} /> : <Menu size={22} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile menu */}
@@ -75,18 +108,9 @@ const Navbar = () => {
             className="md:hidden overflow-hidden border-t border-border/50 bg-background/98 backdrop-blur-xl"
           >
             <div className="flex flex-col gap-1 px-4 py-4">
-              {navLinks.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  onClick={() => setIsOpen(false)}
-                  className="text-base font-body text-muted-foreground hover:text-foreground transition-colors py-3 px-2 rounded-md hover:bg-accent"
-                >
-                  {link.label}
-                </a>
-              ))}
+              {navLinks.map((link) => renderNavLink(link, true))}
               <a
-                href="#contact"
+                href={isHome ? "#contact" : "/#contact"}
                 onClick={() => setIsOpen(false)}
                 className="text-base font-body font-medium bg-primary text-primary-foreground px-5 py-3 rounded-sm text-center hover:bg-primary/90 transition-colors mt-2"
               >
