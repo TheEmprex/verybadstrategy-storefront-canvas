@@ -34,7 +34,7 @@ const VenturesSection = () => {
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="mb-14 sm:mb-20"
+          className="mb-14 sm:mb-20 text-center"
         >
           <span className="text-[10px] sm:text-xs font-body font-medium tracking-[0.3em] uppercase text-primary mb-3 sm:mb-4 block">
             Portfolio
@@ -44,7 +44,7 @@ const VenturesSection = () => {
           </h2>
         </motion.div>
 
-        <div className="space-y-4 max-w-4xl">
+        <div className="space-y-4 max-w-4xl mx-auto">
           {ventures.map((venture, index) => (
             <motion.div
               key={venture.name}

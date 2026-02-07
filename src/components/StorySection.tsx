@@ -15,7 +15,7 @@ const StorySection = () => {
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="mb-16 sm:mb-20"
+          className="mb-16 sm:mb-20 text-center"
         >
           <span className="text-[10px] sm:text-xs font-body font-medium tracking-[0.3em] uppercase text-primary mb-3 sm:mb-4 block">
             Our Story
@@ -26,12 +26,12 @@ const StorySection = () => {
         </motion.div>
 
         {/* The actual story — conversational, not a timeline */}
-        <div className="max-w-2xl">
+        <div className="max-w-2xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="space-y-6 sm:space-y-8"
+            className="space-y-6 sm:space-y-8 text-center"
           >
             <p className="font-body text-secondary-foreground text-base sm:text-lg leading-relaxed">
               Maxime and Lucas met working in private equity. Both had Masters in Finance, 
@@ -80,7 +80,7 @@ const StorySection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.7 }}
-            className="mt-12 sm:mt-16 flex items-center gap-4"
+            className="mt-12 sm:mt-16 flex items-center justify-center gap-4"
           >
             <div className="flex -space-x-2">
               <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-primary/10 border-2 border-background flex items-center justify-center z-10">

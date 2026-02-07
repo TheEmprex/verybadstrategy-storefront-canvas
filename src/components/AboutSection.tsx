@@ -13,7 +13,7 @@ const AboutSection = () => {
             initial={{ opacity: 0, y: 40 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8 }}
-            className="mb-12 sm:mb-16"
+            className="mb-12 sm:mb-16 text-center"
           >
             <span className="text-[10px] sm:text-xs font-body font-medium tracking-[0.3em] uppercase text-primary mb-3 sm:mb-4 block">
               About
